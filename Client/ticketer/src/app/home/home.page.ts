@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthentificationComponent } from './../authentification/authentification.component'
 
 @Component({
   selector: 'app-home',
