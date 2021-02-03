@@ -1,3 +1,5 @@
+import { FormsModule } from '@angular/forms';
+import { AuthentificationComponent } from './authentification/authentification.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
@@ -15,9 +17,9 @@ import { AngularFireAuthModule } from '@angular/fire/auth/public_api';
 
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, AuthentificationComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, AngularFireModule.initializeApp(environment.firebase)],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, AngularFireModule.initializeApp(environment.firebase),FormsModule],
   providers: [
     StatusBar,
     SplashScreen,
