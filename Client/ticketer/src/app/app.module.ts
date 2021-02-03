@@ -1,3 +1,4 @@
+import { ConnectionService } from './../services/connection.service';
 import { FormsModule } from '@angular/forms';
 import { AuthentificationComponent } from './authentification/authentification.component';
 import { NgModule } from '@angular/core';
@@ -14,6 +15,8 @@ import { AngularFireModule } from '@angular/fire';
 import { environment } from 'src/environments/environment.prod';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [AppComponent, AuthentificationComponent],
@@ -23,7 +26,8 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
     FormsModule,
-    AngularFirestoreModule],
+    AngularFirestoreModule,
+    HttpClientModule],
   providers: [
     StatusBar,
     SplashScreen,

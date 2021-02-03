@@ -3,10 +3,12 @@ const oebb = require('oebb')
 const bodyParser = require('body-parser')
 const swaggerJsDoc = require('swagger-jsdoc')
 const swaggerUI = require('swagger-ui-express')
+var cors = require('cors');
 
 const app = express();
 const port = 8000;
 app.use(bodyParser.json())
+app.use(cors());
 
 const swaggerOptions = {
     swaggerDefinition: {
@@ -20,7 +22,6 @@ const swaggerOptions = {
 };
 
 const swaggerDocs = swaggerJsDoc(swaggerOptions);
-
 
 app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerDocs))
 
@@ -44,14 +45,15 @@ app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerDocs))
  *          200:
  *              description: Success
  */
-app.get('/autoComplete', (req, res) => {
+app.post('/autoComplete', (req, res) => {
     req.props = Object.assign(req.query, req.params, req.body);
     var name = req.props.name;
     var amount = req.props.amount;
     oebb.stations.search(name, {results: amount}).then(value => {
         var stationNames = new Array();
         value.forEach(element => {
-            stationNames.push({id: element.id,
+            stationNames.push({
+                id: element.id,
                 name: element.name});
         });
         res.send(stationNames);
@@ -111,8 +113,8 @@ app.post('/getJourney', (req,res) => {
                         plattform: queryLegs.departurePlatform
                     },
                     arrival:{
-                        arrival: queryLegs.departure,
-                        arrivalPlatform: queryLegs.departurePlatform
+                        time: queryLegs.departure,
+                        plattform: queryLegs.departurePlatform
                     },
                     lineName: queryLegs.line.name
                 })
