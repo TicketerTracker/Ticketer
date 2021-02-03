@@ -1,3 +1,4 @@
+import { ConnectionService } from './../services/connection.service';
 import { Component } from '@angular/core';
 
 import { Platform } from '@ionic/angular';
@@ -10,6 +11,8 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
   styleUrls: ['app.component.scss']
 })
 export class AppComponent {
+  private connectionService: ConnectionService
+
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
@@ -23,5 +26,9 @@ export class AppComponent {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
     });
+  }
+
+  getRailway(){
+    this.connectionService.autoCompleteStationName("Lin", 5).subscribe(station => console.log(station));
   }
 }
