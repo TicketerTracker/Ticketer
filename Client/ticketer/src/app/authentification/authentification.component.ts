@@ -1,5 +1,6 @@
 import { ConnectionService } from './../../services/connection.service';
 import { Component, OnInit } from '@angular/core';
+import { AuthenticationServicesService } from 'src/services/authentication-services.service';
 import { FirestoreService } from 'src/services/firestore.service';
 
 @Component({
@@ -15,7 +16,7 @@ export class AuthentificationComponent implements OnInit {
   public password: string;
   public passwordConfirm: string;
 
-  constructor(private fireStore: FirestoreService, connectionService: ConnectionService) {
+  constructor(private authService: AuthenticationServicesService,private fireStore: FirestoreService, connectionService: ConnectionService) { 
     this.fireStore.storeTicket({
       start: "Wien",
       end: "Linz",
@@ -30,15 +31,14 @@ export class AuthentificationComponent implements OnInit {
 
   public register() {
     if (this.password != this.passwordConfirm) {
-      return alert("wrong password");
-    }
-    if (this.password === "" || this.passwordConfirm === "" || this.mailadress === "" || this.username === "") {
-      return alert("type in every value");
-    }
-    if (this.mailadress && this.mailadress.indexOf("@") === -1) {
-      return alert("please enter valid mail adress");
+      return alert("Passwords do not match");
+    } else if (this.password === "" || this.username === "") {
+      return alert("Missing Username or Password");
+    } else if (!this.mailadress || this.mailadress.indexOf("@") === -1) {
+      return alert("Mssing Mail Adress");
     }
 
+    this.authService.createUserWithEmailAndPassword(this.mailadress, this.password);
   }
 
   /*getRailway(){
