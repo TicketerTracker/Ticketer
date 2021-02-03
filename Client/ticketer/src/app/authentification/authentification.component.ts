@@ -1,5 +1,6 @@
 import { ConnectionService } from './../../services/connection.service';
 import { Component, OnInit } from '@angular/core';
+import { FirestoreService } from 'src/services/firestore.service';
 
 @Component({
   selector: 'app-authentification',
@@ -14,8 +15,12 @@ export class AuthentificationComponent implements OnInit {
   public password: string;
   public passwordConfirm: string;
 
-
-  constructor(connectionService: ConnectionService) { 
+  constructor(private fireStore: FirestoreService, connectionService: ConnectionService) {
+    this.fireStore.storeTicket({
+      start: "Wien",
+      end: "Linz",
+      price: "16"
+    });
     this.connectionService = connectionService;
   }
 

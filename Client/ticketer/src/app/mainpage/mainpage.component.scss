@@ -11,8 +11,7 @@ h1{
     
 }
 
-
-.register{
+.tracking{
     display: flex;
     width: 100%;
     height: 100%;
@@ -21,10 +20,16 @@ h1{
     background: linear-gradient(75deg,rgb(223, 10, 74),rgb(90, 43, 43));
 
 }
+
 .input{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     background-color: rgb(211, 206, 206);
+
+    
+    
 }
+
+
 .button{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     justify-content: center;
@@ -41,3 +46,17 @@ button:hover {
     border: 2px solid #333;
     color: #fff;
   }
+
+  .checkbox{
+      font-weight: bold;
+      font-family: inherit;
+      color: black;
+  }
+
+  .text{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: black;
+    font-weight: lighter;
+    margin-bottom: inherit;     
+}
+
