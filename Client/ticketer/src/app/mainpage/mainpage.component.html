@@ -1,0 +1,57 @@
+<section class="tracking">
+
+  <form>
+
+
+    <div class="field">
+      <h1>YOUR TRAIN</h1>
+      <div class="field-body">
+        <div class="field">
+          <p class="control">
+            <input name="stationOne" type="text" class="input" placeholder="From" [(ngModel)]="stationOne">
+          </p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="field">
+      <div class="field-body">
+        <div class="field">
+          <p class="control">
+            <input type="text" name="stationTwo" class="input" placeholder="To" [(ngModel)]="stationTwo">
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <input name="checkBoxPrice" type="checkbox" [checked]="checkBoxPrice" (change)="checkBoxPrice=!checkBoxPrice"
+        class="checkbox">
+      <span class="text"> ENABLE CUSTOM PRIZE
+      </span>
+    </div>
+
+    <div class="field">
+      <div class="field-body">
+        <div class="field">
+          <p class="control">
+            <input [disabled]=!checkBoxPrice type="number" name="price" class="input"
+              placeholder="Custom Price (optional)" [(ngModel)]="customPrize">
+          </p>
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <div class="field">
+      <button class="button" (click)="tracking($event)">Track</button>
+    </div>
+
+
+
+  </form>
+
+</section>
