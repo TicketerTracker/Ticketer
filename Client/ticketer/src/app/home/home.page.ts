@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
+
 import { AuthentificationComponent } from './../authentification/authentification.component'
+
+import { AuthenticationServicesService } from 'src/services/authentication-services.service';
 
 @Component({
   selector: 'app-home',
@@ -7,7 +10,5 @@ import { AuthentificationComponent } from './../authentification/authentificatio
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-
-  constructor() {}
 
 }
