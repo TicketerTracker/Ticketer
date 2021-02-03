@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthenticationServicesService } from 'src/services/authentication-services.service';
+import { FirestoreService } from 'src/services/firestore.service';
 
 @Component({
   selector: 'app-authentification',
@@ -13,8 +14,14 @@ export class AuthentificationComponent implements OnInit {
   public password: string;
   public passwordConfirm: string;
 
+  constructor(private authService: AuthenticationServicesService,private fireStore: FirestoreService) { 
+    this.fireStore.storeTicket({
+      start: "Wien",
+      end: "Linz",
+      price: "16"
+    })
+  }
 
-  constructor(private authService: AuthenticationServicesService) { }
 
   ngOnInit() { }
 
