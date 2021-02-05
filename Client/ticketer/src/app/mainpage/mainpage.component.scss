@@ -36,6 +36,9 @@ h1{
     align-items:center;
     width:-webkit-fill-available ;
     text-transform: uppercase;
+    position: relative;
+    top: 11px;
+
     
     
     background-color: rgb(211, 206, 206);
@@ -60,3 +63,7 @@ button:hover {
     margin-bottom: inherit;     
 }
 
+#prize {
+    position: relative;
+    top: 11px;
+}

@@ -7,7 +7,8 @@
       <div class="field-body">
         <div class="field">
           <p class="control">
-            <input name="e-mail" type="text" class="input" placeholder="E-MAIL" [(ngModel)]="mailadress">
+            <input name="e-mail" type="text" class="input" placeholder="E-MAIL" autocomplete="email"
+              [(ngModel)]="mailadress">
           </p>
         </div>
       </div>
@@ -18,7 +19,8 @@
       <div class="field-body">
         <div class="field">
           <p class="control">
-            <input type="text" name="username" class="input" placeholder="USERNAME" [(ngModel)]="username">
+            <input type="text" name="username" class="input" placeholder="USERNAME" autocomplete="username"
+              [(ngModel)]="username">
           </p>
         </div>
       </div>
