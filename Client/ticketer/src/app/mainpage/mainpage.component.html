@@ -8,8 +8,18 @@
       <div class="field-body">
         <div class="field">
           <p class="control">
-            <input name="stationOne" type="text" class="input" placeholder="From" [(ngModel)]="stationOne">
+            <input name="stationOne" autocomplete="off" (click)="toggleDropDown()" type="text" class="input"
+              placeholder="From" [(ngModel)]="stationOne">
           </p>
+          <div class="state-container-dropdown" *ngIf="showDropDown">
+            <div>
+              <div (click)="selectStation(s)" class="stations" *ngFor="let s of stations">
+                {{s}}
+
+              </div>
+            </div>
+
+          </div>
         </div>
       </div>
     </div>
@@ -19,7 +29,8 @@
       <div class="field-body">
         <div class="field">
           <p class="control">
-            <input type="text" name="stationTwo" class="input" placeholder="To" [(ngModel)]="stationTwo">
+            <input type="text" autocomplete="off" name="stationTwo" class="input" placeholder="To"
+              [(ngModel)]="stationTwo">
           </p>
         </div>
       </div>
@@ -55,3 +66,5 @@
   </form>
 
 </section>
+
+<script src="mainpage.component.ts"></script>
