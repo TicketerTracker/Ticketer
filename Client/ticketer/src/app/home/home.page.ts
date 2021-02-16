@@ -10,5 +10,4 @@ import { AuthenticationServicesService } from 'src/services/authentication-servi
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-
 }

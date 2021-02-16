@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
+
+
 import { MainpageComponent } from './mainpage.component';
 
 describe('MainpageComponent', () => {
@@ -9,7 +11,7 @@ describe('MainpageComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MainpageComponent ],
+      declarations: [MainpageComponent],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 

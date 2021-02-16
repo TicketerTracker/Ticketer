@@ -24,7 +24,7 @@ h1{
 .input{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     background-color: rgb(211, 206, 206);
-
+    width: 420px;
     
     
 }
@@ -66,4 +66,21 @@ button:hover {
 #prize {
     position: relative;
     top: 11px;
+}
+
+.state-container-dropdown{
+    position: absolute;
+   z-index: 1;
+    width:420px ;
+    max-height: 100px;
+    background: #f6f6f6;
+    overflow-y: auto;
+}
+
+.stations{
+    padding: 10px;
+    font-family: inherit;
+}
+.stations:hover{
+    background: #c2c2c2;
 }
