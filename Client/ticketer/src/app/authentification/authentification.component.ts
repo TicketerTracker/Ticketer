@@ -16,7 +16,7 @@ export class AuthentificationComponent implements OnInit {
   public password: string;
   public passwordConfirm: string;
 
-  constructor(private authService: AuthenticationServicesService,private fireStore: FirestoreService, connectionService: ConnectionService) { 
+  constructor(private authService: AuthenticationServicesService, private fireStore: FirestoreService, connectionService: ConnectionService) {
     this.fireStore.storeTicket({
       start: "Wien",
       end: "Linz",
@@ -25,7 +25,7 @@ export class AuthentificationComponent implements OnInit {
     this.connectionService = connectionService;
   }
 
-  ngOnInit() { 
+  ngOnInit() {
     //this.getRailway();
   }
 

@@ -1,3 +1,4 @@
+import { TileComponent } from './tile/tile.component';
 import { ConnectionService } from './../services/connection.service';
 import { Component } from '@angular/core';
 
@@ -8,7 +9,8 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
-  styleUrls: ['app.component.scss']
+  styleUrls: ['app.component.scss'],
+
 })
 export class AppComponent {
   private connectionService: ConnectionService
@@ -28,7 +30,7 @@ export class AppComponent {
     });
   }
 
-  getRailway(){
+  getRailway() {
     this.connectionService.autoCompleteStationName("Lin", 5).subscribe(station => console.log(station));
   }
 }

@@ -1,7 +1,9 @@
+import { TileComponent } from './tile/tile.component';
+import { DashboardTileComponent } from './dashboard-tile/dashboard-tile.component';
 import { ConnectionService } from './../services/connection.service';
 import { FormsModule } from '@angular/forms';
 import { AuthentificationComponent } from './authentification/authentification.component';
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
 
@@ -19,8 +21,8 @@ import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
-  declarations: [AppComponent, AuthentificationComponent],
-  entryComponents: [],
+  declarations: [AppComponent, AuthentificationComponent, TileComponent],
+
   imports: [BrowserModule,
     IonicModule.forRoot(),
     AppRoutingModule,
@@ -33,6 +35,6 @@ import { HttpClientModule } from '@angular/common/http';
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent], schemas: [CUSTOM_ELEMENTS_SCHEMA], entryComponents: []
 })
 export class AppModule { }

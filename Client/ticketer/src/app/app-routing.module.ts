@@ -1,3 +1,6 @@
+import { DashboardTileComponent } from './dashboard-tile/dashboard-tile.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { LoginComponent } from './login/login.component';
 import { MainpageComponent } from './mainpage/mainpage.component';
 import { AuthentificationComponent } from './authentification/authentification.component';
 import { NgModule } from '@angular/core';
@@ -13,7 +16,7 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   }, { path: 'register', component: AuthentificationComponent },
-  { path: 'main', component: MainpageComponent }
+  { path: 'main', component: MainpageComponent }, { path: 'login', component: LoginComponent }, { path: 'dashboard', component: DashboardComponent }, { path: 'dashboardtile', component: DashboardTileComponent }
 ];
 
 @NgModule({

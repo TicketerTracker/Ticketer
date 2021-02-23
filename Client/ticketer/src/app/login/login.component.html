@@ -1,0 +1,42 @@
+<section class="register">
+
+  <form (ngSubmit)="register()">
+
+    <div class="field">
+      <h1>LOGIN</h1>
+      <div class="field-body">
+        <div class="field">
+          <p class="control">
+            <input name="e-mail" type="text" class="input" placeholder="E-MAIL" autocomplete="email"
+              [(ngModel)]="mailadress">
+          </p>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+    <div class="field">
+      <p class="control">
+        <input type="password" name="password" class="input" placeholder="PASSWORD" [(ngModel)]="password">
+      </p>
+    </div>
+
+
+
+
+    <div class="field">
+      <button class="button">Login</button>
+    </div>
+
+
+
+
+
+
+  </form>
+
+</section>
