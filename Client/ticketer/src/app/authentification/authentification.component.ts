@@ -2,6 +2,7 @@ import { ConnectionService } from './../../services/connection.service';
 import { Component, OnInit } from '@angular/core';
 import { AuthenticationServicesService } from 'src/services/authentication-services.service';
 import { FirestoreService } from 'src/services/firestore.service';
+import { Route } from 'src/models/route';
 
 @Component({
   selector: 'app-authentification',
@@ -23,6 +24,15 @@ export class AuthentificationComponent implements OnInit {
       price: "16"
     });
     this.connectionService = connectionService;
+
+    //Proof of Concept Firestore Service
+    /*
+        this.authService.signInWithEmailAndPassword("admin@gmx.at", "admin0306").then(res => {
+          let route = new Route(16);
+          this.fireStore.storeTicket(route);
+          let response = this.fireStore.getAllTicketsOfCurrentUser().subscribe(res => console.log(res))
+        }).catch(console.error)
+        */
   }
 
   ngOnInit() {
